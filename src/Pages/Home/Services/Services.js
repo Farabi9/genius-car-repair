@@ -14,7 +14,7 @@ const Services = () => {
     },[])
 
     return (
-        <div >
+        <div id='services'>
             <h1 className='services-title mt-5 mb-3'>
                 Our Servics == {services.length}.
             </h1>
