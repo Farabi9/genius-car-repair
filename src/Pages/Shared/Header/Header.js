@@ -5,6 +5,7 @@ import logo from '../../../images/logo.png'
 const Header = () => {
     return (
        <header > 
+           <h1>header</h1>
   <Navbar bg="primary" variant="dark" fixed='top'>
     <Container>
     <Navbar.Brand href="#home">
