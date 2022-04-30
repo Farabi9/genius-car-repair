@@ -4,7 +4,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import './Register.css'
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { async } from '@firebase/util';
+
 import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
@@ -14,12 +14,12 @@ const Register = () => {
 
     const [
         createUserWithEmailAndPassword,
-        user,
+        
         loading,
-        error,
+     
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
-    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [updateProfile, updating] = useUpdateProfile(auth);
     const navigate = useNavigate();
 
     const navigateLogin = () => {
@@ -44,9 +44,7 @@ const Register = () => {
         alert('Updated profile');
         navigate('/home')
     }
-    if (user) {
-        
-    }
+  
     return (
         <div className='register-form'>
             <h2 style={{ textAlign: 'center' }}>
