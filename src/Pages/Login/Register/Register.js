@@ -4,8 +4,9 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import './Register.css'
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
-
 import Loading from '../../Shared/Loading/Loading';
+
+
 
 const Register = () => {
 
@@ -15,7 +16,7 @@ const Register = () => {
     const [
         createUserWithEmailAndPassword,
         
-        loading,
+        loading
      
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
@@ -44,6 +45,7 @@ const Register = () => {
         alert('Updated profile');
         navigate('/home')
     }
+  
   
     return (
         <div className='register-form'>
