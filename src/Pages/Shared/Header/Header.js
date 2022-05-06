@@ -9,7 +9,7 @@ import logo from '../../../images/logo.png'
 const Header = () => {
     const [user] = useAuthState(auth);
 
-    const handleSignOut = () =>{
+    const handleSignOut = () => {
         signOut(auth);
     }
     return (
@@ -17,7 +17,7 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" sticky='top' bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
-                        <img src={logo}  height='30px' alt="" />
+                        <img src={logo} height='30px' alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -36,17 +36,18 @@ const Header = () => {
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                             {
                                 user && <>
-                                <Nav.Link as={Link} to="/addservice">Add</Nav.Link>
-                                <Nav.Link as={Link} to="/manage">Manage</Nav.Link>
+                                    <Nav.Link as={Link} to="/addservice">Add</Nav.Link>
+                                    <Nav.Link as={Link} to="/manage">Manage</Nav.Link>
+                                    <Nav.Link as={Link} to="/orders">Orders</Nav.Link>
                                 </>
                             }
-                           {
-                           user ?
-                           <button className='btn btn-warning' onClick={handleSignOut}>SignOut</button>
-                           : 
-                            <Nav.Link as={Link} to="/login">
-                                Login
-                            </Nav.Link>}
+                            {
+                                user ?
+                                    <button className='btn btn-warning' onClick={handleSignOut}>SignOut</button>
+                                    :
+                                    <Nav.Link as={Link} to="/login">
+                                        Login
+                                    </Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
